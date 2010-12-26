@@ -17,7 +17,7 @@ class Fight < ActiveRecord::Base
 
   # The opponent hits back!
   #
-  def counter (attack)
+  def counter_attack
     Attack.new(
       :fight => self,
       :attacker => opponent,
@@ -38,6 +38,8 @@ class Fight < ActiveRecord::Base
   end
 
   def loser
-    (player == winner) ? opponent : player
+    return nil    if winner.nil?
+    return player if player == winner
+    return opponent
   end
 end
