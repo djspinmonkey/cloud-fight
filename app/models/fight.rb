@@ -39,7 +39,7 @@ class Fight < ActiveRecord::Base
 
   def loser
     return nil    if winner.nil?
-    return player if player == winner
+    return player if winner == opponent
     return opponent
   end
 end
