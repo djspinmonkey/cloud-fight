@@ -1,7 +1,7 @@
 CloudFight::Application.routes.draw do
   resources :fights
   resources :characters
-  resources :attacks
+  resources :attacks, :only => :create
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
