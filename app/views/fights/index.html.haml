@@ -1,0 +1,20 @@
+%h1 Listing fights
+
+%table
+  %tr
+    %th 
+      Combatants
+    %th
+    %th
+    %th
+
+  - @fights.each do |fight|
+    %tr
+      %td= fight.display_string
+      %td= link_to 'Show', fight
+      %td= link_to 'Edit', edit_fight_path(fight)
+      %td= link_to 'Destroy', fight, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Fight', new_fight_path

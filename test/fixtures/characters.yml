@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  strength: 1
+  toughness: 1
+
+two:
+  name: MyString
+  strength: 1
+  toughness: 1

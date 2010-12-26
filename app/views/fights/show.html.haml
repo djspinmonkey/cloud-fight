@@ -1,0 +1,16 @@
+%p#notice= raw notice
+
+- if @fight.over?
+  %p
+    This fight is over.  #{@fight.winner.name} has vanquished #{@fight.loser.name}!
+
+  = link_to 'New Fight', new_fight_path
+- else
+  :markdown
+    You are **#{@fight.player.name}**.  You have **#{@fight.player.hitpoints}** hit points.
+
+    You are fighting **#{@fight.opponent.name}**. He has **#{@fight.opponent.hitpoints}** hit points.
+
+  =form_tag( attacks_path, :method => 'POST' ) do
+    %input{ :type => 'hidden', :name => 'attack[fight_id]', :value => @fight.id }
+      %input{ :type => 'submit', :value => 'attack' }
